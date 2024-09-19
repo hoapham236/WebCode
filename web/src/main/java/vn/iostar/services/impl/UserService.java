@@ -23,4 +23,38 @@ public class UserService implements IUserService{
 		return userDao.findByUserName(username);
 	}
 
+	@Override
+	public void insert(UserModel user) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean register(String email, String password, String username, String fullname, String phone) {
+		if (userDao.checkExistUsername(username)) {
+			return false;
+			}
+		long millis=System.currentTimeMillis();
+		java.sql.Date date=new java.sql.Date(millis);
+		userDao.insert(new UserModel(email, username, fullname,password,null,1,phone,date));
+		return true;
+	}
+
+	@Override
+	public boolean checkExistEmail(String email) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean checkExistUsername(String username) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean checkExistPhone(String phone) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
