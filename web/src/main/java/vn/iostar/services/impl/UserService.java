@@ -57,4 +57,14 @@ public class UserService implements IUserService{
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	@Override
+	public boolean check(String email, String username) {
+		return userDao.check(email,username);
+	}
+
+	@Override
+	public boolean resetPassword(String username, String password) {
+		return userDao.resetPassword(username, password);
+	}
 }
