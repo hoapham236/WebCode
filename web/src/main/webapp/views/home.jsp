@@ -8,5 +8,8 @@
 </head>
 <body>
 	Trang chủ user
+	<a href="${pageContext.request.contextPath}/login">
+	    <button type="button" class="logoutbtn">Log out</button>
+	</a>
 </body>
 </html>
